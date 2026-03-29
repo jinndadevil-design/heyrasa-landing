@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rasa — Your AI Health Companion</title>
-    <meta name="description" content="Track nutrition, sleep, and progress with AI that actually understands Asian food. Made in Malaysia.">
+    <meta name="description" content="Track nutrition, sleep, and progress with AI that actually understands Asian food. Scan any dish, get instant macros. Made in Malaysia.">
     <meta property="og:title" content="Rasa — Your AI Health Companion">
     <meta property="og:description" content="Scan your food. Track your sleep. Feel the difference.">
     <meta property="og:type" content="website">
@@ -30,11 +30,11 @@
             top: 0;
             width: 100%;
             z-index: 100;
-            padding: 20px 24px;
+            padding: 16px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(13,13,13,0.9);
+            background: rgba(13,13,13,0.92);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255,255,255,0.06);
         }
@@ -47,39 +47,87 @@
         }
 
         .logo-icon {
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
             background: linear-gradient(180deg, #E8451E 0%, #C53A18 100%);
             border-radius: 9px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
             color: #0D0D0D;
-            font-family: 'Inter', sans-serif;
             line-height: 1;
         }
 
         .logo-text {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
             letter-spacing: -0.5px;
             color: #E8451E;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav-social a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .nav-social a:hover { color: #E8451E; }
+
         .nav-cta {
             background: #E8451E;
             color: white;
-            padding: 10px 24px;
+            padding: 9px 20px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             transition: all 0.3s;
         }
 
         .nav-cta:hover { background: #d13a15; transform: scale(1.05); }
+
+        /* Sections common */
+        section { padding: 80px 24px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #E8451E;
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: clamp(26px, 5vw, 42px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+            max-width: 550px;
+            margin-bottom: 48px;
+        }
 
         /* Hero */
         .hero {
@@ -89,7 +137,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 120px 24px 80px;
+            padding: 110px 24px 60px;
             position: relative;
         }
 
@@ -99,9 +147,9 @@
             top: -20%;
             left: 50%;
             transform: translateX(-50%);
-            width: 600px;
+            width: min(600px, 100vw);
             height: 600px;
-            background: radial-gradient(circle, rgba(232,69,30,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(232,69,30,0.12) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -111,22 +159,21 @@
             gap: 8px;
             background: rgba(232,69,30,0.1);
             border: 1px solid rgba(232,69,30,0.3);
-            padding: 8px 16px;
+            padding: 7px 14px;
             border-radius: 50px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 500;
             color: #E8451E;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .hero h1 {
-            font-size: clamp(32px, 8vw, 72px);
+            font-size: clamp(32px, 7vw, 68px);
             font-weight: 800;
             line-height: 1.05;
             letter-spacing: -2px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             max-width: 700px;
-            word-wrap: break-word;
         }
 
         .hero h1 .gradient {
@@ -137,16 +184,16 @@
         }
 
         .hero p {
-            font-size: 18px;
-            color: rgba(255,255,255,0.6);
-            max-width: 500px;
+            font-size: 16px;
+            color: rgba(255,255,255,0.55);
+            max-width: 460px;
             line-height: 1.6;
-            margin-bottom: 40px;
+            margin-bottom: 36px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 16px;
+            gap: 12px;
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -154,14 +201,14 @@
         .btn-primary {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             background: #E8451E;
             color: white;
-            padding: 16px 32px;
+            padding: 14px 28px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 15px;
             transition: all 0.3s;
         }
 
@@ -170,14 +217,14 @@
         .btn-secondary {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             background: rgba(255,255,255,0.08);
             color: white;
-            padding: 16px 32px;
+            padding: 14px 28px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 15px;
             border: 1px solid rgba(255,255,255,0.12);
             transition: all 0.3s;
         }
@@ -186,15 +233,15 @@
 
         /* Phone mockup */
         .phone-mockup {
-            margin-top: 60px;
+            margin-top: 48px;
             position: relative;
-            width: 280px;
-            height: 560px;
+            width: 260px;
+            height: 520px;
             background: #1A1A1A;
-            border-radius: 40px;
+            border-radius: 36px;
             border: 3px solid rgba(255,255,255,0.1);
             overflow: hidden;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
         }
 
         .phone-mockup img {
@@ -203,53 +250,236 @@
             object-fit: cover;
         }
 
-        .phone-placeholder {
-            width: 100%;
-            height: 100%;
+        /* Trust Bar */
+        .trust-bar {
+            padding: 40px 24px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .trust-bar-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .trust-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: rgba(255,255,255,0.3);
-            font-size: 14px;
-            text-align: center;
-            padding: 20px;
+            font-size: 20px;
         }
 
-        /* Features */
-        .features {
+        .trust-icon.ai { background: rgba(232,69,30,0.12); }
+        .trust-icon.science { background: rgba(99,102,241,0.12); }
+        .trust-icon.secure { background: rgba(16,185,129,0.12); }
+        .trust-icon.my { background: rgba(201,168,76,0.12); }
+
+        .trust-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .trust-sub {
+            font-size: 11px;
+            color: rgba(255,255,255,0.35);
+        }
+
+        /* AI Scan Demo */
+        .scan-demo {
             padding: 100px 24px;
-            max-width: 1100px;
+        }
+
+        .scan-demo-inner {
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .section-label {
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #E8451E;
-            margin-bottom: 16px;
+        .scan-example {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
         }
 
-        .section-title {
-            font-size: clamp(28px, 5vw, 44px);
+        .scan-food {
+            flex: 1;
+            text-align: center;
+        }
+
+        .scan-food-emoji {
+            font-size: 80px;
+            margin-bottom: 12px;
+        }
+
+        .scan-food-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .scan-food-desc {
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .scan-arrow {
+            font-size: 32px;
+            color: #E8451E;
+            flex-shrink: 0;
+        }
+
+        .scan-results {
+            flex: 1.5;
+        }
+
+        .macro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .macro-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 14px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .macro-value {
+            font-size: 28px;
             font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 60px;
-            max-width: 600px;
+            margin-bottom: 2px;
+        }
+
+        .macro-value.cal { color: #E8451E; }
+        .macro-value.protein { color: #10B981; }
+        .macro-value.carbs { color: #C9A84C; }
+        .macro-value.fat { color: #6366F1; }
+
+        .macro-label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scan-ingredients {
+            margin-top: 16px;
+            padding: 14px 18px;
+            background: rgba(232,69,30,0.08);
+            border-radius: 12px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.5;
+        }
+
+        .scan-ingredients strong { color: #E8451E; }
+
+        /* Recipe Section */
+        .recipe-section {
+            padding: 100px 24px;
+            background: rgba(255,255,255,0.015);
+        }
+
+        .recipe-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .recipe-flow {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            margin-top: 48px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+
+        .recipe-step {
+            flex: 1;
+            min-width: 220px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 28px 22px;
+            text-align: center;
+            position: relative;
+        }
+
+        .recipe-step-num {
+            width: 32px;
+            height: 32px;
+            background: #E8451E;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 0 auto 16px;
+        }
+
+        .recipe-step-icon {
+            font-size: 40px;
+            margin-bottom: 14px;
+        }
+
+        .recipe-step h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .recipe-step p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.5;
+        }
+
+        .recipe-arrow {
+            display: flex;
+            align-items: center;
+            color: rgba(232,69,30,0.4);
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 100px 24px;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         .feature-card {
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.06);
             border-radius: 20px;
-            padding: 36px 28px;
+            padding: 28px 24px;
             transition: all 0.3s;
         }
 
@@ -260,105 +490,175 @@
         }
 
         .feature-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 22px;
+            margin-bottom: 16px;
         }
 
         .feature-icon.scan { background: rgba(232,69,30,0.15); }
+        .feature-icon.log { background: rgba(201,168,76,0.15); }
+        .feature-icon.water { background: rgba(56,189,248,0.15); }
         .feature-icon.sleep { background: rgba(99,102,241,0.15); }
-        .feature-icon.track { background: rgba(201,168,76,0.15); }
-        .feature-icon.community { background: rgba(16,185,129,0.15); }
+        .feature-icon.dashboard { background: rgba(16,185,129,0.15); }
+        .feature-icon.community { background: rgba(236,72,153,0.15); }
+        .feature-icon.progress { background: rgba(245,158,11,0.15); }
+        .feature-icon.recipe { background: rgba(168,85,247,0.15); }
 
         .feature-card h3 {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .feature-card p {
-            font-size: 14px;
-            color: rgba(255,255,255,0.5);
-            line-height: 1.6;
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.5;
         }
 
-        /* How it works */
-        .how-it-works {
+        /* App Screenshots */
+        .screenshots {
+            padding: 80px 24px;
+            background: rgba(255,255,255,0.015);
+        }
+
+        .screenshots-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .screenshots-scroll {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 48px;
+        }
+
+        .screenshot-item {
+            width: 180px;
+            height: 360px;
+            background: #1A1A1A;
+            border-radius: 24px;
+            border: 2px solid rgba(255,255,255,0.08);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .screenshot-item:hover { transform: translateY(-8px); }
+
+        .screenshot-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .screenshot-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.2);
+            font-size: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .screenshot-placeholder .ss-icon { font-size: 32px; }
+
+        /* Science / Credibility */
+        .credibility {
             padding: 100px 24px;
+        }
+
+        .credibility-inner {
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .steps {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            margin-top: 60px;
+        .cred-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
         }
 
-        .step {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-            padding: 36px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            text-align: left;
+        .cred-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 32px 24px;
         }
 
-        .step-number {
-            font-size: 48px;
-            font-weight: 800;
-            color: rgba(232,69,30,0.3);
-            min-width: 70px;
+        .cred-card .cred-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
         }
 
-        .step h3 {
-            font-size: 20px;
+        .cred-card h3 {
+            font-size: 16px;
             font-weight: 700;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
-        .step p {
-            font-size: 14px;
-            color: rgba(255,255,255,0.5);
-            line-height: 1.5;
+        .cred-card p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.6;
         }
 
-        /* Trust */
-        .trust {
-            padding: 80px 24px;
+        /* Social Proof */
+        .social-proof {
+            padding: 60px 24px;
+            background: rgba(255,255,255,0.015);
             text-align: center;
         }
 
-        .trust-badges {
+        .proof-quote {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 20px;
+            font-weight: 600;
+            font-style: italic;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .proof-stat-grid {
             display: flex;
-            gap: 40px;
+            gap: 48px;
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 40px;
         }
 
-        .trust-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
+        .proof-stat {
+            text-align: center;
         }
 
-        .trust-icon {
-            font-size: 28px;
+        .proof-stat .stat-num {
+            font-size: 36px;
+            font-weight: 800;
+            color: #E8451E;
         }
 
-        .trust-item span {
-            font-size: 13px;
-            color: rgba(255,255,255,0.5);
-            font-weight: 500;
+        .proof-stat .stat-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* CTA */
@@ -374,82 +674,129 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 800px;
+            width: min(800px, 100vw);
             height: 400px;
-            background: radial-gradient(ellipse, rgba(232,69,30,0.1) 0%, transparent 70%);
+            background: radial-gradient(ellipse, rgba(232,69,30,0.08) 0%, transparent 70%);
             pointer-events: none;
         }
 
         .cta h2 {
-            font-size: clamp(32px, 6vw, 52px);
+            font-size: clamp(28px, 5vw, 48px);
             font-weight: 800;
             letter-spacing: -1.5px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .cta p {
-            color: rgba(255,255,255,0.5);
-            font-size: 16px;
-            margin-bottom: 40px;
+            color: rgba(255,255,255,0.45);
+            font-size: 15px;
+            margin-bottom: 36px;
         }
 
         /* Footer */
         footer {
             padding: 40px 24px;
             border-top: 1px solid rgba(255,255,255,0.06);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
             max-width: 1100px;
             margin: 0 auto;
         }
 
-        .footer-left {
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .footer-brand p {
             font-size: 13px;
             color: rgba(255,255,255,0.3);
+            margin-top: 8px;
+            max-width: 280px;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 24px;
+        .footer-links-section h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 12px;
         }
 
-        .footer-links a {
-            color: rgba(255,255,255,0.4);
+        .footer-links-section a {
+            display: block;
+            color: rgba(255,255,255,0.35);
             text-decoration: none;
             font-size: 13px;
+            margin-bottom: 8px;
             transition: color 0.3s;
         }
 
-        .footer-links a:hover { color: #E8451E; }
+        .footer-links-section a:hover { color: #E8451E; }
 
-        .malaysia-badge {
-            display: inline-flex;
+        .footer-social {
+            display: flex;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.06);
+            display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 13px;
-            color: rgba(255,255,255,0.4);
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover { background: #E8451E; transform: translateY(-2px); }
+
+        .social-btn svg { width: 18px; height: 18px; fill: rgba(255,255,255,0.6); }
+        .social-btn:hover svg { fill: white; }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom span {
+            font-size: 12px;
+            color: rgba(255,255,255,0.25);
         }
 
         /* Responsive */
-        @media (max-width: 640px) {
-            nav { padding: 16px 20px; }
-            .hero { padding: 100px 16px 60px; }
+        @media (max-width: 768px) {
+            section { padding: 60px 20px; }
+            nav { padding: 14px 16px; }
+            .nav-social { display: none; }
+            .hero { padding: 100px 16px 50px; }
             .hero h1 { font-size: 30px; letter-spacing: -1px; }
-            .hero p { font-size: 14px; padding: 0 4px; }
-            .badge { font-size: 12px; padding: 6px 12px; }
-            .hero::before { width: 100%; }
-            .cta::before { width: 100%; }
-            .nav-cta { padding: 8px 16px; font-size: 13px; }
-            .hero-buttons { flex-direction: column; width: 100%; max-width: 320px; }
-            .btn-primary, .btn-secondary { justify-content: center; }
-            .phone-mockup { width: 240px; height: 480px; }
-            .step { flex-direction: column; gap: 16px; text-align: center; }
-            .step-number { min-width: auto; }
+            .hero p { font-size: 14px; }
+            .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; }
+            .btn-primary, .btn-secondary { justify-content: center; font-size: 14px; padding: 13px 24px; }
+            .phone-mockup { width: 220px; height: 440px; }
+            .trust-bar-inner { gap: 24px; }
+            .scan-example { flex-direction: column; padding: 24px; gap: 20px; }
+            .scan-arrow { transform: rotate(90deg); }
+            .macro-grid { grid-template-columns: 1fr 1fr; }
+            .recipe-flow { flex-direction: column; align-items: center; }
+            .recipe-arrow { transform: rotate(90deg); }
             .features-grid { grid-template-columns: 1fr; }
-            footer { flex-direction: column; text-align: center; }
+            .screenshot-item { width: 140px; height: 280px; }
+            .cred-grid { grid-template-columns: 1fr; }
+            .proof-stat-grid { gap: 24px; }
+            .footer-top { flex-direction: column; }
+            .footer-bottom { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -461,105 +808,279 @@
             <div class="logo-icon">r</div>
             <div class="logo-text">rasa</div>
         </a>
-        <a href="https://getrasa-app.lovable.app" class="nav-cta">Open App</a>
+        <div class="nav-right">
+            <div class="nav-social">
+                <a href="https://www.tiktok.com/@heyrasa" target="_blank">TikTok</a>
+                <a href="https://www.instagram.com/heyrasa" target="_blank">Instagram</a>
+            </div>
+            <a href="https://getrasa-app.lovable.app" class="nav-cta">Try Free</a>
+        </div>
     </nav>
 
     <!-- Hero -->
     <section class="hero">
-        <div class="badge">
-            <span>&#x1F1F2;&#x1F1FE;</span> Made in Malaysia
-        </div>
+        <div class="badge">&#x1F1F2;&#x1F1FE; Made in Malaysia</div>
         <h1>Your AI<br><span class="gradient">Health Companion</span></h1>
-        <p>Scan your food. Track your sleep. Feel the difference. Powered by AI that actually understands Asian food.</p>
+        <p>Scan any food. Get instant nutrition. Track your sleep. Discover recipes. All powered by AI that actually understands Asian food.</p>
         <div class="hero-buttons">
             <a href="https://getrasa-app.lovable.app" class="btn-primary">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                 Try Rasa Free
             </a>
-            <a href="#features" class="btn-secondary">
-                See Features
-            </a>
+            <a href="#features" class="btn-secondary">See Features</a>
         </div>
         <div class="phone-mockup">
             <img src="screenshot.jpg" alt="Rasa App — AI Health Companion">
         </div>
     </section>
 
-    <!-- Features -->
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="trust-bar-inner">
+            <div class="trust-item">
+                <div class="trust-icon ai">&#x1F9E0;</div>
+                <div>
+                    <div class="trust-text">Powered by GPT-4 Vision</div>
+                    <div class="trust-sub">OpenAI's most advanced AI</div>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon science">&#x1F52C;</div>
+                <div>
+                    <div class="trust-text">Science-Backed Data</div>
+                    <div class="trust-sub">USDA & verified nutrition databases</div>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon secure">&#x1F512;</div>
+                <div>
+                    <div class="trust-text">Bank-Level Security</div>
+                    <div class="trust-sub">256-bit SSL encryption</div>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon my">&#x1F1F2;&#x1F1FE;</div>
+                <div>
+                    <div class="trust-text">Built in Malaysia</div>
+                    <div class="trust-sub">For Asian food lovers</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Scan Demo -->
+    <section class="scan-demo">
+        <div class="scan-demo-inner">
+            <p class="section-label">AI-Powered Scanning</p>
+            <h2 class="section-title">Scan any local dish.<br>Get instant macros.</h2>
+            <p class="section-subtitle">Our AI recognises Asian food that other apps can't — from nasi lemak to char kuey teow. Powered by the same technology behind ChatGPT.</p>
+
+            <div class="scan-example">
+                <div class="scan-food">
+                    <div class="scan-food-emoji">&#x1F35B;</div>
+                    <div class="scan-food-name">Nasi Lemak</div>
+                    <div class="scan-food-desc">Coconut rice, sambal, egg, peanuts, anchovies, cucumber</div>
+                </div>
+                <div class="scan-arrow">&#x27A1;&#xFE0F;</div>
+                <div class="scan-results">
+                    <div class="macro-grid">
+                        <div class="macro-card">
+                            <div class="macro-value cal">644</div>
+                            <div class="macro-label">Calories</div>
+                        </div>
+                        <div class="macro-card">
+                            <div class="macro-value protein">18g</div>
+                            <div class="macro-label">Protein</div>
+                        </div>
+                        <div class="macro-card">
+                            <div class="macro-value carbs">72g</div>
+                            <div class="macro-label">Carbs</div>
+                        </div>
+                        <div class="macro-card">
+                            <div class="macro-value fat">31g</div>
+                            <div class="macro-label">Fat</div>
+                        </div>
+                    </div>
+                    <div class="scan-ingredients">
+                        <strong>Detected ingredients:</strong> Coconut rice, sambal belacan, fried egg, roasted peanuts, fried anchovies, cucumber slices
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Discovery -->
+    <section class="recipe-section">
+        <div class="recipe-inner">
+            <p class="section-label">Recipe Discovery</p>
+            <h2 class="section-title">Scan ingredients. Get recipes instantly.</h2>
+            <p class="section-subtitle">Open your fridge, scan what you have, and Rasa generates personalised recipes. Save your favourites and share with the community.</p>
+
+            <div class="recipe-flow">
+                <div class="recipe-step">
+                    <div class="recipe-step-num">1</div>
+                    <div class="recipe-step-icon">&#x1F4F7;</div>
+                    <h3>Scan Ingredients</h3>
+                    <p>Point your camera at any ingredients — chicken, vegetables, spices, anything</p>
+                </div>
+                <div class="recipe-arrow">&#x27A1;&#xFE0F;</div>
+                <div class="recipe-step">
+                    <div class="recipe-step-num">2</div>
+                    <div class="recipe-step-icon">&#x1F373;</div>
+                    <h3>Get AI Recipes</h3>
+                    <p>Rasa generates multiple recipe options with steps, cook time, and nutrition info</p>
+                </div>
+                <div class="recipe-arrow">&#x27A1;&#xFE0F;</div>
+                <div class="recipe-step">
+                    <div class="recipe-step-num">3</div>
+                    <div class="recipe-step-icon">&#x1F4BE;</div>
+                    <h3>Save & Share</h3>
+                    <p>Save recipes to your library. Share your favourites with the community</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Features -->
     <section class="features" id="features">
-        <p class="section-label">Features</p>
-        <h2 class="section-title">Everything you need to live healthier</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon scan">&#x1F4F7;</div>
-                <h3>AI Food Scanner</h3>
-                <p>Point your camera at any dish. Our AI identifies every ingredient and gives you a full nutrition breakdown — even for nasi lemak and char kuey teow.</p>
+        <div class="container">
+            <div style="text-align:center; margin-bottom:48px;">
+                <p class="section-label">All Features</p>
+                <h2 class="section-title" style="margin:0 auto 16px;">Everything you need in one app</h2>
+                <p class="section-subtitle" style="margin:0 auto;">No more juggling between MyFitnessPal, Sleep Cycle, and recipe apps. Rasa does it all.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon sleep">&#x1F31C;</div>
-                <h3>Sleep Tracking</h3>
-                <p>Log your bedtime and wake time. Get a sleep quality score, weekly trends, and insights to help you sleep better.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon track">&#x1F4CA;</div>
-                <h3>Health Dashboard</h3>
-                <p>Your daily health score, macro rings, water intake, and calories — all in one beautiful dashboard. See the full picture.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon community">&#x1F465;</div>
-                <h3>Community</h3>
-                <p>Share recipes, follow friends, and get inspired by what others are eating. Health is better together.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="how-it-works" id="how">
-        <p class="section-label">How It Works</p>
-        <h2 class="section-title" style="margin-left:auto;margin-right:auto;">Three steps to better health</h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">01</div>
-                <div>
-                    <h3>Scan your food</h3>
-                    <p>Take a photo of any meal. Our AI powered by GPT-4 Vision identifies ingredients and calculates nutrition instantly.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon scan">&#x1F4F7;</div>
+                    <h3>AI Food Scanner</h3>
+                    <p>Scan any dish — get instant calories, protein, carbs, and fat. Works with Asian food other apps can't recognise.</p>
                 </div>
-            </div>
-            <div class="step">
-                <div class="step-number">02</div>
-                <div>
-                    <h3>Track everything</h3>
-                    <p>Nutrition, sleep, water, weight — all logged automatically. Re-log frequent meals with one tap.</p>
+                <div class="feature-card">
+                    <div class="feature-icon log">&#x1F4DD;</div>
+                    <h3>Log Your Meals</h3>
+                    <p>Track breakfast, lunch, dinner and snacks. Running daily totals keep you on target. Save frequent meals for one-tap logging.</p>
                 </div>
-            </div>
-            <div class="step">
-                <div class="step-number">03</div>
-                <div>
-                    <h3>See the difference</h3>
-                    <p>Watch your health score improve. Get personalized insights and hit your daily goals.</p>
+                <div class="feature-card">
+                    <div class="feature-icon water">&#x1F4A7;</div>
+                    <h3>Water Tracking</h3>
+                    <p>Stay hydrated with quick-add water logging. See your daily intake and hit your hydration goals.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon sleep">&#x1F31C;</div>
+                    <h3>Sleep Tracking</h3>
+                    <p>Log bedtime and wake time. Get a quality score 0-100, weekly trends, and insights to improve your rest.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon dashboard">&#x1F4CA;</div>
+                    <h3>Health Dashboard</h3>
+                    <p>Daily health score, macro rings, water intake, and calories — your complete health picture at a glance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon recipe">&#x1F372;</div>
+                    <h3>AI Recipe Generator</h3>
+                    <p>Scan any ingredients and get personalised recipes. Save to your library, share with the community.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon progress">&#x1F3CB;&#xFE0F;</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Log weight, take progress photos, track streaks. See how far you've come with visual charts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon community">&#x1F465;</div>
+                    <h3>Community</h3>
+                    <p>Share recipes and progress. Follow friends, like and comment. Get inspired by others on the same journey.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust signals -->
-    <section class="trust">
-        <div class="trust-badges">
-            <div class="trust-item">
-                <div class="trust-icon">&#x1F512;</div>
-                <span>Data Encrypted</span>
+    <!-- App Screenshots -->
+    <section class="screenshots">
+        <div class="screenshots-inner">
+            <p class="section-label">See It In Action</p>
+            <h2 class="section-title">Designed to feel premium</h2>
+            <p class="section-subtitle" style="margin:0 auto;">Dark, minimal, and built for health-conscious people who want more than just calorie counting.</p>
+            <div class="screenshots-scroll">
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <div class="ss-icon">&#x1F3E0;</div>
+                        Health Dashboard
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <div class="ss-icon">&#x1F4F7;</div>
+                        Food Scanner
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <div class="ss-icon">&#x1F31C;</div>
+                        Sleep Tracker
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <div class="ss-icon">&#x1F372;</div>
+                        Recipe Generator
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <div class="ss-icon">&#x1F4C8;</div>
+                        Progress
+                    </div>
+                </div>
             </div>
-            <div class="trust-item">
-                <div class="trust-icon">&#x1F1F2;&#x1F1FE;</div>
-                <span>Made in Malaysia</span>
+            <p style="margin-top:24px; font-size:13px; color:rgba(255,255,255,0.3);">Screenshots from the Rasa app</p>
+        </div>
+    </section>
+
+    <!-- Credibility Section -->
+    <section class="credibility">
+        <div class="credibility-inner">
+            <p class="section-label">Why Trust Rasa</p>
+            <h2 class="section-title">Built on proven technology</h2>
+            <div class="cred-grid">
+                <div class="cred-card">
+                    <div class="cred-icon">&#x1F9E0;</div>
+                    <h3>Powered by OpenAI GPT-4</h3>
+                    <p>The same AI behind ChatGPT analyses your food with computer vision. It identifies ingredients, portions, and cooking methods with remarkable accuracy.</p>
+                </div>
+                <div class="cred-card">
+                    <div class="cred-icon">&#x1F4D6;</div>
+                    <h3>Verified Nutrition Data</h3>
+                    <p>Macro calculations are cross-referenced with established nutrition databases including USDA and regional food composition tables for Asian cuisine.</p>
+                </div>
+                <div class="cred-card">
+                    <div class="cred-icon">&#x1F6E1;&#xFE0F;</div>
+                    <h3>Your Data is Protected</h3>
+                    <p>256-bit SSL encryption. Row-level database security. Your health data is private — only you can see it. We never sell your data. Ever.</p>
+                </div>
             </div>
-            <div class="trust-item">
-                <div class="trust-icon">&#x1F916;</div>
-                <span>Powered by GPT-4</span>
+        </div>
+    </section>
+
+    <!-- Social Proof / Stats -->
+    <section class="social-proof">
+        <p class="section-label">Join The Movement</p>
+        <p class="proof-quote">"Finally, a health app that knows what nasi lemak is."</p>
+        <div class="proof-stat-grid">
+            <div class="proof-stat">
+                <div class="stat-num">100+</div>
+                <div class="stat-label">Asian Dishes Recognised</div>
             </div>
-            <div class="trust-item">
-                <div class="trust-icon">&#x26A1;</div>
-                <span>Free to Use</span>
+            <div class="proof-stat">
+                <div class="stat-num">8</div>
+                <div class="stat-label">Health Features</div>
+            </div>
+            <div class="proof-stat">
+                <div class="stat-num">&lt;3s</div>
+                <div class="stat-label">Scan Speed</div>
+            </div>
+            <div class="proof-stat">
+                <div class="stat-num">Free</div>
+                <div class="stat-label">To Get Started</div>
             </div>
         </div>
     </section>
@@ -567,31 +1088,46 @@
     <!-- CTA -->
     <section class="cta">
         <h2>Start your health<br>journey today</h2>
-        <p>Free to use. No credit card required. 5 AI scans per day.</p>
+        <p>Free to use. No credit card required. 3 free AI scans per day.</p>
         <div class="hero-buttons">
             <a href="https://getrasa-app.lovable.app" class="btn-primary">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                 Try Rasa Free
             </a>
-            <!-- Uncomment when Play Store listing is live:
-            <a href="https://play.google.com/store/apps/details?id=com.heyrasa.app" class="btn-secondary">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302L4.864 3.477l8.635 8.636 4.199-2.605zM4.864 3.477L15.8 9.81l-2.302 2.302L4.864 3.477z"/></svg>
-                Get on Google Play
-            </a>
-            -->
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-left">
-            <div class="malaysia-badge">&#x1F1F2;&#x1F1FE; Made with love in Malaysia</div>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="/" class="logo">
+                    <div class="logo-icon">r</div>
+                    <div class="logo-text">rasa</div>
+                </a>
+                <p>Your AI-powered health companion. Built in Malaysia for Asian food lovers everywhere.</p>
+            </div>
+            <div class="footer-links-section">
+                <h4>App</h4>
+                <a href="https://getrasa-app.lovable.app">Open Web App</a>
+                <a href="#features">Features</a>
+                <a href="/privacy">Privacy Policy</a>
+            </div>
+            <div class="footer-links-section">
+                <h4>Follow Us</h4>
+                <div class="footer-social">
+                    <a href="https://www.tiktok.com/@heyrasa" target="_blank" class="social-btn" aria-label="TikTok">
+                        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.87a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.3z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/heyrasa" target="_blank" class="social-btn" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="footer-links">
-            <a href="https://getrasa-app.lovable.app">Open App</a>
-            <a href="https://www.tiktok.com/@heyrasa" target="_blank">TikTok</a>
-            <a href="https://www.instagram.com/heyrasa" target="_blank">Instagram</a>
-            <a href="/privacy">Privacy Policy</a>
+        <div class="footer-bottom">
+            <span>&#x1F1F2;&#x1F1FE; Made with love in Malaysia</span>
+            <span>&copy; 2026 Rasa. All rights reserved.</span>
         </div>
     </footer>
 
