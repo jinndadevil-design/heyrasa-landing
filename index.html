@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasa — Your AI Health Companion</title>
+    <meta name="description" content="Track nutrition, sleep, and progress with AI that actually understands Asian food. Made in Malaysia.">
+    <meta property="og:title" content="Rasa — Your AI Health Companion">
+    <meta property="og:description" content="Scan your food. Track your sleep. Feel the difference.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://heyrasa.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0D0D0D;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(13,13,13,0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span { color: #E8451E; }
+
+        .nav-cta {
+            background: #E8451E;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover { background: #d13a15; transform: scale(1.05); }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(232,69,30,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(232,69,30,0.1);
+            border: 1px solid rgba(232,69,30,0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #E8451E;
+            margin-bottom: 32px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 72px);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+            max-width: 700px;
+        }
+
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, #E8451E, #C9A84C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.6);
+            max-width: 500px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #E8451E;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover { background: #d13a15; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(232,69,30,0.3); }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+
+        /* Phone mockup */
+        .phone-mockup {
+            margin-top: 60px;
+            position: relative;
+            width: 280px;
+            height: 560px;
+            background: #1A1A1A;
+            border-radius: 40px;
+            border: 3px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+        }
+
+        .phone-mockup img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .phone-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Features */
+        .features {
+            padding: 100px 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #E8451E;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 5vw, 44px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 60px;
+            max-width: 600px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 36px 28px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(232,69,30,0.2);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon.scan { background: rgba(232,69,30,0.15); }
+        .feature-icon.sleep { background: rgba(99,102,241,0.15); }
+        .feature-icon.track { background: rgba(201,168,76,0.15); }
+        .feature-icon.community { background: rgba(16,185,129,0.15); }
+
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+        }
+
+        /* How it works */
+        .how-it-works {
+            padding: 100px 24px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-top: 60px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            padding: 36px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            text-align: left;
+        }
+
+        .step-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: rgba(232,69,30,0.3);
+            min-width: 70px;
+        }
+
+        .step h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .step p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.5;
+        }
+
+        /* Trust */
+        .trust {
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .trust-icon {
+            font-size: 28px;
+        }
+
+        .trust-item span {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+        }
+
+        /* CTA */
+        .cta {
+            padding: 100px 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(232,69,30,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta h2 {
+            font-size: clamp(32px, 6vw, 52px);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            color: rgba(255,255,255,0.5);
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 24px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-left {
+            font-size: 13px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: #E8451E; }
+
+        .malaysia-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            nav { padding: 16px 20px; }
+            .hero { padding: 100px 20px 60px; }
+            .hero h1 { letter-spacing: -1px; }
+            .hero-buttons { flex-direction: column; width: 100%; max-width: 320px; }
+            .btn-primary, .btn-secondary { justify-content: center; }
+            .phone-mockup { width: 240px; height: 480px; }
+            .step { flex-direction: column; gap: 16px; text-align: center; }
+            .step-number { min-width: auto; }
+            .features-grid { grid-template-columns: 1fr; }
+            footer { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav>
+        <div class="logo"><span>R</span>asa</div>
+        <a href="https://app.heyrasa.com" class="nav-cta">Open App</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="badge">
+            <span>&#x1F1F2;&#x1F1FE;</span> Made in Malaysia
+        </div>
+        <h1>Your AI<br><span class="gradient">Health Companion</span></h1>
+        <p>Scan your food. Track your sleep. Feel the difference. Powered by AI that actually understands Asian food.</p>
+        <div class="hero-buttons">
+            <a href="https://app.heyrasa.com" class="btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                Try Rasa Free
+            </a>
+            <a href="#features" class="btn-secondary">
+                See Features
+            </a>
+        </div>
+        <div class="phone-mockup">
+            <div class="phone-placeholder">
+                <!-- Replace this div with: <img src="screenshot.png" alt="Rasa App"> -->
+                App screenshot goes here<br><br>Take a screenshot of your app's home screen and save it as screenshot.png
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <p class="section-label">Features</p>
+        <h2 class="section-title">Everything you need to live healthier</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon scan">&#x1F4F7;</div>
+                <h3>AI Food Scanner</h3>
+                <p>Point your camera at any dish. Our AI identifies every ingredient and gives you a full nutrition breakdown — even for nasi lemak and char kuey teow.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon sleep">&#x1F31C;</div>
+                <h3>Sleep Tracking</h3>
+                <p>Log your bedtime and wake time. Get a sleep quality score, weekly trends, and insights to help you sleep better.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon track">&#x1F4CA;</div>
+                <h3>Health Dashboard</h3>
+                <p>Your daily health score, macro rings, water intake, and calories — all in one beautiful dashboard. See the full picture.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon community">&#x1F465;</div>
+                <h3>Community</h3>
+                <p>Share recipes, follow friends, and get inspired by what others are eating. Health is better together.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works" id="how">
+        <p class="section-label">How It Works</p>
+        <h2 class="section-title" style="margin-left:auto;margin-right:auto;">Three steps to better health</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div>
+                    <h3>Scan your food</h3>
+                    <p>Take a photo of any meal. Our AI powered by GPT-4 Vision identifies ingredients and calculates nutrition instantly.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <div>
+                    <h3>Track everything</h3>
+                    <p>Nutrition, sleep, water, weight — all logged automatically. Re-log frequent meals with one tap.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <div>
+                    <h3>See the difference</h3>
+                    <p>Watch your health score improve. Get personalized insights and hit your daily goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust signals -->
+    <section class="trust">
+        <div class="trust-badges">
+            <div class="trust-item">
+                <div class="trust-icon">&#x1F512;</div>
+                <span>Data Encrypted</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">&#x1F1F2;&#x1F1FE;</div>
+                <span>Made in Malaysia</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">&#x1F916;</div>
+                <span>Powered by GPT-4</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">&#x26A1;</div>
+                <span>Free to Use</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <h2>Start your health<br>journey today</h2>
+        <p>Free to use. No credit card required. 5 AI scans per day.</p>
+        <div class="hero-buttons">
+            <a href="https://app.heyrasa.com" class="btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                Try Rasa Free
+            </a>
+            <!-- Uncomment when Play Store listing is live:
+            <a href="https://play.google.com/store/apps/details?id=com.heyrasa.app" class="btn-secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302L4.864 3.477l8.635 8.636 4.199-2.605zM4.864 3.477L15.8 9.81l-2.302 2.302L4.864 3.477z"/></svg>
+                Get on Google Play
+            </a>
+            -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <div class="malaysia-badge">&#x1F1F2;&#x1F1FE; Made with love in Malaysia</div>
+        </div>
+        <div class="footer-links">
+            <a href="https://app.heyrasa.com">Open App</a>
+            <a href="https://www.tiktok.com/@heyrasa" target="_blank">TikTok</a>
+            <a href="https://www.instagram.com/heyrasa" target="_blank">Instagram</a>
+            <a href="/privacy">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <!-- Smooth scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+</body>
+</html>
